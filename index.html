@@ -44,10 +44,18 @@
         }
 
         .site-logo {
-            width: auto;
-            height: auto;
-            border-radius: 8px;
-        }
+  width: 210px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Add this media query below */
+@media (max-width: 600px) {
+  .site-logo {
+    width: 120px; /* Better fit on phones */
+  }
+}
+
 
         header img.photo {
             width: 220px;
