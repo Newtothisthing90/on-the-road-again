@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>On The Road Again Auto Repairs</title>
+    <meta name="description" content="Your trusted, family-owned auto repair shop in Durham, ME. We offer honest service, fair prices, and expert repairs for brakes, engines, tires, and more.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -19,6 +21,24 @@
             background-color: var(--light-bg);
             color: var(--dark);
         }
+
+        .main-nav {
+            background-color: var(--dark);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+            .main-nav a {
+                color: white;
+                text-decoration: none;
+                margin: 0 20px;
+                font-weight: bold;
+            }
+            .main-nav a:hover {
+                color: var(--silver);
+            }
 
         header {
             background: var(--blue);
@@ -41,10 +61,23 @@
             position: absolute;
             top: 20px;
             right: 20px;
+            width: calc(100% - 40px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+        
+        .header-phone {
+            color: white;
+            font-weight: bold;
+        }
+            .header-phone a {
+                color: white;
+                text-decoration: none;
+            }
 
         .site-logo {
-            width: 175px;
+            width: 180px; 
             height: auto;
             border-radius: 8px;
         }
@@ -75,7 +108,7 @@
             border-left: 4px solid var(--silver);
             border-radius: 6px;
         }
-
+        
         .cta-button {
             background: var(--silver);
             color: var(--blue);
@@ -86,12 +119,30 @@
             cursor: pointer;
             font-size: 1rem;
             margin-top: 20px;
+            text-decoration: none;
         }
 
         section {
             padding: 50px 20px;
             max-width: 1000px;
             margin: auto;
+        }
+        
+        #about-us {
+            background-color: #fff;
+        }
+
+        #about-us h2, #services h2, #booking h2, #reviews h2, #location-map h2 {
+            text-align: center; 
+            font-size: 2rem; 
+            margin-bottom: 25px;
+        }
+
+        #about-us .about-content {
+            max-width: 750px; 
+            margin: auto; 
+            line-height: 1.6;
+            text-align: center;
         }
 
         .services {
@@ -109,22 +160,22 @@
             flex: 1 1 200px;
             text-align: center;
         }
+            .service h3 {
+                margin-top: 0;
+            }
 
-        form {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            border: 2px solid var(--blue);
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        #booking {
+            text-align: center;
+        }
+        
+        #location-map {
+            text-align: center; 
         }
 
-            form input, form select, form textarea {
-                width: 100%;
-                margin-bottom: 15px;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-            }
+        #location-map iframe {
+            border-radius: 8px; 
+            max-width: 100%;
+        }
 
         .reviews {
             background: #e9efff;
@@ -159,45 +210,72 @@
             font-weight: bold;
             cursor: pointer;
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            z-index: 999;
         }
     </style>
 </head>
 <body>
 
+    <nav class="main-nav">
+        <a href="#about-us">Our Story</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book Now</a>
+        <a href="#location-map">Find Us</a>
+    </nav>
+
     <header>
         <div class="top-bar">
+            <p class="header-phone">Call Us: <a href="tel:2074413790">(207) 441-3790</a></p>
             <img src="logo.jpg" alt="On The Road Again Logo" class="site-logo">
         </div>
 
         <img src="chris-and-dad.jpg" alt="Chris and his dad" class="photo" />
         <p class="tagline">Proudly Serving Durham, Maine</p>
         <blockquote>
-            "Hours go Here"
+            “This shop was my dad’s dream — now it’s my honor. I plan to fill this garage with good cars, good work, and good people.”
         </blockquote>
-        <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book an Appointment</button>
+        <a href="#booking" class="cta-button">Book an Appointment</a>
     </header>
-    <section id="about-us" style="background-color: #fff; padding: 50px 20px;">
-    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 25px;">Our Story</h2>
-    <div style="max-width: 750px; margin: auto; line-height: 1.6;">
-        <p>At On The Road Again Auto Repairs, this isn't just a business — it's a dream handed down from my father. Growing up in the garage with him, I learned that good work speaks louder than any advertisement, and that every car has a story. I’ve made it my mission to continue what he started: delivering honest repairs, fair prices, and treating every customer like family.</p>
-        <p>Durham isn’t just where I work — it’s my home. I’m proud to serve the people in this town and the surrounding areas, helping neighbors get safely back on the road. Whether it’s a quick fix or a major job, you can count on us to get it done right the first time.</p>
-        <p>We’re not a big chain. We’re a local shop with local values. And that’s something you can trust.</p>
-    </div>
-</section>
-    
-    <section>
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="service">🔧 Oil Changes</div>
-            <div class="service">🛠 Brake Service</div>
-            <div class="service">🚗 Engine Diagnostics</div>
-            <div class="service">🛞 Tire Services</div>
-            <div class="service">🧰 General Repairs</div>
+
+    <section id="about-us">
+        <h2>Our Story</h2>
+        <div class="about-content">
+            <p>At On The Road Again Auto Repairs, this isn't just a business — it's a dream handed down from my father. Growing up in the garage with him, I learned that good work speaks louder than any advertisement, and that every car has a story. I’ve made it my mission to continue what he started: delivering honest repairs, fair prices, and treating every customer like family.</p>
+            <p>Durham isn’t just where I work — it’s my home. I’m proud to serve the people in this town and the surrounding areas, helping neighbors get safely back on the road. Whether it’s a quick fix or a major job, you can count on us to get it done right the first time.</p>
+            <p>We’re not a big chain. We’re a local shop with local values. And that’s something you can trust.</p>
         </div>
     </section>
-<section id="booking">
-    <h2>Book Your Repair</h2>
-    <script src='https://square.site/appointments/buyer/widget/h1wll07dssw7x7/LM0BTPXVC8GG2.js'></script></section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">
+                <h3>🔧 Oil Changes</h3>
+                <p>Includes up to 5 quarts of quality motor oil and a new oil filter to keep your engine at its best.</p>
+            </div>
+            <div class="service">
+                <h3>🛠 Brake Service</h3>
+                <p>Full brake inspections, pad and rotor replacement, and fluid checks to ensure your safety.</p>
+            </div>
+            <div class="service">
+                <h3>🚗 Engine Diagnostics</h3>
+                <p>We use modern tools to read error codes and diagnose 'check engine' lights accurately.</p>
+            </div>
+            <div class="service">
+                <h3>🛞 Tire Services</h3>
+                <p>Tire rotation, balancing, and flat repairs to extend the life of your tires.</p>
+            </div>
+            <div class="service">
+                <h3>🧰 General Repairs</h3>
+                <p>From strange noises to complex issues, we're equipped to handle a wide range of auto repairs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2>Book Your Repair</h2>
+        <p>Use our live calendar below to find a time that works for you. All appointments will be confirmed by our team.</p>
+        <script src='https://square.site/appointments/buyer/widget/h1wll07dssw7x7/LM0BTPXVC8GG2.js'></script></section>
 
     <section class="reviews">
         <h2>Customer Reviews</h2>
@@ -205,15 +283,22 @@
         <div class="review">⭐⭐⭐⭐⭐ "Legacy shop, top-notch work. Wouldn’t go anywhere else."</div>
         <div class="review">⭐⭐⭐⭐⭐ "Real people, real service. 10/10!"</div>
     </section>
-    </section> <section id="location-map">
+
+    <section id="location-map">
         <h2>Our Location</h2>
-       <iframe src="https://www.google.com/maps/embed/v1/4" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2875.5841235314237!2d-70.10377488458001!3d43.9885992791113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb2113d43d43d43%3A0x4cb2113d43d43d43!2s56%20Emerson%20Rd%2C%20Durham%2C%20ME%2004222!5e0!3m2!1sen!2sus!4v1620000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
+
     <footer>
         <p>📍 56 Emerson Rd, Durham, ME 04222</p>
         <p>📞 <a href="tel:2074413790" style="color: #fff;">(207) 441-3790</a></p>
+        <p>🕒 Hours: Mon - Fri, 8:00 AM - 5:00 PM (Please add your actual hours)</p>
     </footer>
 
-    <script src="//code.tidio.co/yheewpttgeosuucoa9cgd0lzhpegtqsa.js" async></script>
+    <div class="sticky-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+        Book Now
+    </div>
+
+    <script src='//code.tidio.co/yheewpttgeosuucoa9cgd0lzhpegtqsa.js' async></script>
 </body>
 </html>
