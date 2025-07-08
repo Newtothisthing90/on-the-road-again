@@ -1,240 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>On The Road Again Auto Repairs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --blue: #2A4F9C;
-      --silver: #D5D7DA;
-      --dark: #1C1C1C;
-      --light-bg: #F2F6FF;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On The Road Again Auto Repairs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #2A4F9C;
+            --silver: #D5D7DA;
+            --dark: #1C1C1C;
+            --light-bg: #F2F6FF;
+        }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background-color: var(--light-bg);
-      color: var(--dark);
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: var(--light-bg);
+            color: var(--dark);
+        }
 
-    header {
-      background: var(--blue);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-    }
+        header {
+            background: var(--blue);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
 
-    header::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 12px;
-      background: repeating-linear-gradient(
-        to right,
-        var(--silver),
-        var(--silver) 12px,
-        transparent 12px,
-        transparent 24px
-      );
-      top: 0;
-    }
+            header::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 12px;
+                background: repeating-linear-gradient( to right, var(--silver), var(--silver) 12px, transparent 12px, transparent 24px );
+                top: 0;
+            }
 
-    .top-bar {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
+        .top-bar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
 
-    .site-logo {
-      width: 210px;
-      height: auto;
-      border-radius: 8px;
-    }
+        .site-logo {
+            width: 210px;
+            height: auto;
+            border-radius: 8px;
+        }
 
-    @media (max-width: 600px) {
-      .site-logo {
-        width: 120px; /* Better fit on phones */
-      }
-    }
+        header img.photo {
+            width: 220px;
+            border-radius: 12px;
+            border: 4px solid var(--silver);
+            margin-top: 20px;
+        }
 
-    header img.photo {
-      width: 220px;
-      border-radius: 12px;
-      border: 4px solid var(--silver);
-      margin-top: 20px;
-    }
+        header h1 {
+            margin: 20px 0 10px;
+            font-size: 2.8rem;
+        }
 
-    header h1 {
-      margin: 20px 0 10px;
-      font-size: 2.8rem;
-    }
+        header p.tagline {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
 
-    header p.tagline {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
+        header blockquote {
+            margin: 20px auto;
+            max-width: 600px;
+            font-style: italic;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-left: 4px solid var(--silver);
+            border-radius: 6px;
+        }
 
-    header blockquote {
-      margin: 20px auto;
-      max-width: 600px;
-      font-style: italic;
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-left: 4px solid var(--silver);
-      border-radius: 6px;
-    }
+        .cta-button {
+            background: var(--silver);
+            color: var(--blue);
+            font-weight: bold;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
 
-    .cta-button {
-      background: var(--silver);
-      color: var(--blue);
-      font-weight: bold;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      margin-top: 20px;
-    }
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
 
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
+        .service {
+            background: white;
+            border: 2px solid var(--silver);
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1 1 200px;
+            text-align: center;
+        }
 
-    .service {
-      background: white;
-      border: 2px solid var(--silver);
-      border-radius: 8px;
-      padding: 20px;
-      flex: 1 1 200px;
-      text-align: center;
-    }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid var(--blue);
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
 
-    form {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      border: 2px solid var(--blue);
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
+            form input, form select, form textarea {
+                width: 100%;
+                margin-bottom: 15px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
 
-    form input, form select, form textarea {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+        .reviews {
+            background: #e9efff;
+            padding: 30px;
+            border-radius: 10px;
+        }
 
-    .reviews {
-      background: #e9efff;
-      padding: 30px;
-      border-radius: 10px;
-    }
+        .review {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
 
-    .review {
-      margin-bottom: 20px;
-      font-style: italic;
-    }
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
 
-    footer {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
+            footer p {
+                margin: 5px 0;
+            }
 
-    footer p {
-      margin: 5px 0;
-    }
-
-    .sticky-cta {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      background: var(--blue);
-      color: white;
-      padding: 14px 20px;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-  </style>
+        .sticky-cta {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: var(--blue);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <div class="top-bar">
-      <img src="Logo.png" alt="On The Road Again Logo" class="site-logo">
+    <header>
+        <div class="top-bar">
+            <img src="logo.png" alt="On The Road Again Logo" class="site-logo">
+        </div>
+
+        <img src="chris-and-dad.jpg" alt="Chris and his dad" class="photo" />
+        <p class="tagline">Proudly Serving Durham, Maine</p>
+        <blockquote>
+            “This shop was my dad’s dream — now it’s my honor. I plan to fill this garage with good cars, good work, and good people.”
+        </blockquote>
+        <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book an Appointment</button>
+    </header>
+
+    <section>
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">🔧 Oil Changes</div>
+            <div class="service">🛠 Brake Service</div>
+            <div class="service">🚗 Engine Diagnostics</div>
+            <div class="service">✅ State Inspections</div>
+            <div class="service">🛞 Tire Services</div>
+            <div class="service">🧰 General Repairs</div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2>Book Your Repair</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="email" placeholder="Email (optional)">
+            <select required>
+                <option value="">Select a Service</option>
+                <option>Oil Change</option>
+                <option>Brake Repair</option>
+                <option>Diagnostics</option>
+                <option>Inspection</option>
+                <option>Tires</option>
+                <option>Other</option>
+            </select>
+            <textarea placeholder="Any notes or additional info..."></textarea>
+            <button class="cta-button" type="submit">Request Appointment</button>
+        </form>
+    </section>
+
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">⭐⭐⭐⭐⭐ "Chris and his dad always treated us like family. Honest and reliable!"</div>
+        <div class="review">⭐⭐⭐⭐⭐ "Legacy shop, top-notch work. Wouldn’t go anywhere else."</div>
+        <div class="review">⭐⭐⭐⭐⭐ "Real people, real service. 10/10!"</div>
+    </section>
+
+    <footer>
+        <p>📍 56 Emerson Rd, Durham, ME 04222</p>
+        <p>📞 <a href="tel:2074413790" style="color: #fff;">(207) 441-3790</a></p>
+    </footer>
+
+    <div class="sticky-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+        Book Now
     </div>
 
-    <img src="chris-and-dad.jpg" alt="Chris and his dad" class="photo" />
-    <p class="tagline">Proudly Serving Durham, Maine</p>
-    <blockquote>
-      “This shop was my dad’s dream — now it’s my honor. I plan to fill this garage with good cars, good work, and good people.”
-    </blockquote>
-    <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book an Appointment</button>
-  </header>
-
-  <section>
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service">🔧 Oil Changes</div>
-      <div class="service">🛠 Brake Service</div>
-      <div class="service">🚗 Engine Diagnostics</div>
-      <div class="service">🛞 Tire Services</div>
-      <div class="service">🧰 General Repairs</div>
-    </div>
-  </section>
-
-  <section id="booking">
-    <h2>Book Your Repair</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <input type="email" placeholder="Email (optional)">
-      <select required>
-        <option value="">Select a Service</option>
-        <option>Oil Change</option>
-        <option>Brake Repair</option>
-        <option>Diagnostics</option>
-        <option>Inspection</option>
-        <option>Tires</option>
-        <option>Other</option>
-      </select>
-      <textarea placeholder="Any notes or additional info..."></textarea>
-      <button class="cta-button" type="submit">Request Appointment</button>
-    </form>
-  </section>
-
-  <section class="reviews">
-    <h2>Customer Reviews</h2>
-    <div class="review">⭐⭐⭐⭐⭐ "Chris and his dad always treated us like family. Honest and reliable!"</div>
-    <div class="review">⭐⭐⭐⭐⭐ "Legacy shop, top-notch work. Wouldn’t go anywhere else."</div>
-    <div class="review">⭐⭐⭐⭐⭐ "Real people, real service. 10/10!"</div>
-  </section>
-
-  <footer>
-    <p>📍 56 Emerson Rd, Durham, ME 04222</p>
-    <p>📞 <a href="tel:2074413790" style="color: #fff;">(207) 441-3790</a></p>
-  </footer>
-
-  <div class="sticky-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
-    Book Now
-  </div>
-
+    <script src="//code.tidio.co/yheewpttgeosuucoa9cgd0lzhpegtqsa.js" async></script>
 </body>
 </html>
